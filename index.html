@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time In/Time Out</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VP for External Campuses</h1>
+        </header>
+
+        <section class="logo-section">
+            <img src="vpec.jpg" alt="Company Logo" id="company-logo">
+        </section>
+
+        <section class="time-logging">
+            <h2>Employee Time Logging</h2>
+        
+            <br>
+        
+            <!-- Select an employee from the existing list -->
+            <label for="employee-select">Select Employee:</label>
+            <select id="employee-select" onchange="updateEmployeeInfo()">
+                <option value="" selected disabled>Select your Name</option>
+                <option value="Yuan Andonga">Yuan Andonga</option>
+                <option value="Aivanne Baria">Aivanne Baria</option>
+                <option value="Jayhan Molato">Jayhan Molato</option>
+                <option value="Ma'am Claire Abalus">Ma'am Claire Abalus</option>
+                <option value="Ma'am Jash Abalus">Ma'am Jash Abalus</option>
+            </select>
+        
+            <div class="log-buttons">
+                <button id="time-in-btn" onclick="logTime('in')" disabled>Time In</button>
+                <button id="time-out-btn" onclick="logTime('out')" disabled>Time Out</button>
+            </div>
+        
+            <div class="log-display">
+                <p id="employee-name-display">Employee: Not selected</p>
+                <p id="time-in-display">Time In: Not logged</p>
+                <p id="time-out-display">Time Out: Not logged</p>
+                <p id="remaining-hours-display">Remaining OJT Hours: N/A</p>
+            </div>
+        </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
