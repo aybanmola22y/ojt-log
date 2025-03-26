@@ -2,6 +2,7 @@ let employees = JSON.parse(localStorage.getItem("employees")) || {
     "Yuan Andonga": { remainingHours: 600, timeIn: null, timeOut: null },
     "Aivanne Baria": { remainingHours: 600, timeIn: null, timeOut: null },
     "Jayhan Molato": { remainingHours: 600, timeIn: null, timeOut: null },
+    "Joseph Monroy": { remainingHours: 600, timeIn: null, timeOut: null },
     "Ma'am Claire Abalus": { remainingHours: 600, timeIn: null, timeOut: null },
     "Ma'am Jash Abalus": { remainingHours: 600, timeIn: null, timeOut: null }
 };
