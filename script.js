@@ -1,11 +1,16 @@
 let employees = JSON.parse(localStorage.getItem("employees")) || {
     "Yuan Andonga": { remainingHours: 600, timeIn: null, timeOut: null },
-    "Aivanne Baria": { remainingHours: 130, timeIn: null, timeOut: null }, // <-- You
+    "Aivanne Baria": { remainingHours: 130, timeIn: null, timeOut: null },
     "Jayhan Molato": { remainingHours: 600, timeIn: null, timeOut: null },
     "Joseph Monroy": { remainingHours: 600, timeIn: null, timeOut: null },
     "Ma'am Claire Abalus": { remainingHours: 600, timeIn: null, timeOut: null },
     "Ma'am Jash Abalus": { remainingHours: 600, timeIn: null, timeOut: null }
 };
+
+// ✅ Force set Aivanne Baria's remaining hours to 130
+if (employees["Aivanne Baria"]) {
+    employees["Aivanne Baria"].remainingHours = 130;
+}
 
 let selectedEmployee = null;
 
@@ -42,7 +47,6 @@ function logTime(action) {
         document.getElementById("time-in-display").textContent = "Time In: " + new Date(now).toLocaleTimeString();
         document.getElementById("time-out-btn").disabled = false;
         document.getElementById("time-in-btn").disabled = true;
-        console.log(`${selectedEmployee} logged in at ${new Date(now).toLocaleTimeString()}`);
     } else if (action === "out") {
         if (!emp.timeIn) return;
 
@@ -58,9 +62,6 @@ function logTime(action) {
         document.getElementById("time-out-display").textContent = "Time Out: " + new Date(now).toLocaleTimeString();
         document.getElementById("remaining-hours-display").textContent = "Remaining OJT Hours: " + emp.remainingHours.toFixed(2) + " hrs";
         document.getElementById("remaining-hours-display").style.color = emp.remainingHours < 50 ? "red" : "black";
-
-        console.log(`${selectedEmployee} logged out at ${new Date(now).toLocaleTimeString()}`);
-        console.log(`Hours Worked: ${hoursWorked}, Remaining Hours: ${emp.remainingHours.toFixed(2)}`);
 
         emp.timeIn = null;
         emp.timeOut = null;
