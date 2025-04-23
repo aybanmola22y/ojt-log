@@ -1,5 +1,6 @@
 let employees = JSON.parse(localStorage.getItem("employees")) || {
     "Yuan Andonga": { remainingHours: 600, timeIn: null, timeOut: null },
+    "Aivanne Baria": { remainingHours: 130, timeIn: null, timeOut: null },
     "Jayhan Molato": { remainingHours: 600, timeIn: null, timeOut: null },
     "Joseph Monroy": { remainingHours: 600, timeIn: null, timeOut: null },
     "Ma'am Claire Abalus": { remainingHours: 600, timeIn: null, timeOut: null },
@@ -7,8 +8,8 @@ let employees = JSON.parse(localStorage.getItem("employees")) || {
 };
 
 // ✅ Force set Aivanne Baria's remaining hours to 130
-if (employees["Aivanne Baria Lazarte"]) {
-    employees["Aivanne Baria Lazarte"].remainingHours = 130;
+if (employees["Aivanne Baria"]) {
+    employees["Aivanne Baria"].remainingHours = 130;
 }
 
 let selectedEmployee = null;
@@ -23,7 +24,7 @@ function updateEmployeeInfo() {
     if (selectedEmployee) {
         const emp = employees[selectedEmployee];
 
-        document.getElementById("employee-name-display").textContent = "Intern Name: " + selectedEmployee;
+        document.getElementById("employee-name-display").textContent = "Employee: " + selectedEmployee;
         document.getElementById("remaining-hours-display").textContent = "Remaining OJT Hours: " + emp.remainingHours.toFixed(2) + " hrs";
         document.getElementById("remaining-hours-display").style.color = emp.remainingHours < 50 ? "red" : "black";
 
