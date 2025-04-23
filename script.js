@@ -24,7 +24,7 @@ function updateEmployeeInfo() {
     if (selectedEmployee) {
         const emp = employees[selectedEmployee];
 
-        document.getElementById("employee-name-display").textContent = "Employee: " + selectedEmployee;
+        document.getElementById("employee-name-display").textContent = "Intern Name: " + selectedEmployee;
         document.getElementById("remaining-hours-display").textContent = "Remaining OJT Hours: " + emp.remainingHours.toFixed(2) + " hrs";
         document.getElementById("remaining-hours-display").style.color = emp.remainingHours < 50 ? "red" : "black";
 
