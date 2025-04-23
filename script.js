@@ -28,8 +28,8 @@ function updateEmployeeInfo() {
         document.getElementById("remaining-hours-display").textContent = "Remaining OJT Hours: " + emp.remainingHours.toFixed(2) + " hrs";
         document.getElementById("remaining-hours-display").style.color = emp.remainingHours < 50 ? "red" : "black";
 
-        document.getElementById("time-in-display").textContent = "Time In: " + (emp.timeIn ? new Date(emp.timeIn).toLocaleTimeString() : "User has not logged in or out");
-        document.getElementById("time-out-display").textContent = "Time Out: " + (emp.timeOut ? new Date(emp.timeOut).toLocaleTimeString() : "User has not logged in or out");
+        document.getElementById("time-in-display").textContent = "Time In: " + (emp.timeIn ? new Date(emp.timeIn).toLocaleTimeString() : "");
+        document.getElementById("time-out-display").textContent = "Time Out: " + (emp.timeOut ? new Date(emp.timeOut).toLocaleTimeString() : "");
 
         document.getElementById("time-in-btn").disabled = emp.timeIn !== null && emp.timeOut === null;
         document.getElementById("time-out-btn").disabled = emp.timeIn === null || emp.timeOut !== null;
