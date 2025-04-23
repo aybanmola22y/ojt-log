@@ -9,7 +9,7 @@ let employees = JSON.parse(localStorage.getItem("employees")) || {
 
 // ✅ Force set Aivanne Baria's remaining hours to 130
 if (employees["Aivanne Baria"]) {
-    employees["Aivanne Baria"].remainingHours = 130;
+    employees["Aivanne Baria"].remainingHours = 125;
 }
 
 let selectedEmployee = null;
